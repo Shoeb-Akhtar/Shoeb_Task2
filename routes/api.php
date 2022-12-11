@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('/todo/add',[App\Http\Controllers\Api\TaskController::class,'add']);
 Route::post('/todo/status/{id}',[App\Http\Controllers\Api\TaskController::class,'update']);
+//Hit api/register for registration page
+Route::get('register',[App\Http\Controllers\Api\TaskController::class,'index']);
+Route::post('register',[App\Http\Controllers\Api\TaskController::class,'registration']);
+//Hit api/register for login  page
+Route::get('login',[App\Http\Controllers\Api\TaskController::class,'login']);
+Route::post('login',[App\Http\Controllers\Api\TaskController::class,'userlogin']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
